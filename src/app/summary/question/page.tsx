@@ -1,0 +1,79 @@
+'use client'
+import React, { Suspense, useEffect, useState } from 'react'
+
+interface MCQ {
+    question: string;
+    options: string[];
+    answer: string;
+  }
+  
+  interface MCQsArray {
+    mcqs: MCQ[];
+  }
+
+export default function Question() {
+    const [res, setRes] = useState<MCQsArray>()
+
+    const [val1 , setVal1] = useState<string>()
+
+    const [val2 , setVal2] = useState<string>()
+
+    const [val3 ,  setVal3] = useState<string>()
+
+    const [loading , setLoading] = useState(true)
+
+    useEffect(() => {
+        setLoading(true)
+
+        const id = typeof window != 'undefined'?String(localStorage.getItem('id')):0
+ 
+     fetch(`/api/question?id=${id}`).then((val) => val.json()).then((val) => {
+        console.log(val);
+        setRes(val)
+        setLoading(false)
+    })
+
+       return () => {}
+    },[])
+  return (
+    <div className='bg-gray-50 mx-3 px-3 py-4 rounded-2xl flex flex-col gap-4'>
+      <h2 className='text-2xl font-bold border-b-2 border-gray-100'>Question</h2>
+    <Suspense fallback={<div>loading...</div>}>
+    {val1? val1 == res?.mcqs[0].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[0].question}</h4>
+       {
+        res?.mcqs[0].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal1(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val2? val2 == res?.mcqs[1].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060; Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[1].question}</h4>
+       {
+        res?.mcqs[1].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal2(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val3? val3 == res?.mcqs[2].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[2].question}</h4>
+       {
+        res?.mcqs[2].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal3(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    </Suspense>
+    <button className='bg-purple-300 p-4 text-xl text-white' onClick={() => window.location.reload()}>{loading ?  'Loading...' : "Load More"}</button>
+    </div>
+  )
+}

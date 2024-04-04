@@ -15,13 +15,6 @@ export default function SignUp() {
   } = useForm<FormInput>();
   const [error, setError] = useState("");
  const {push}= useRouter()
- useEffect(() => {
-  fetch('/api/email').then((val) => {
-val.json().then((val) =>{
-console.log(val);
-})
-  })
- })
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     setError("");
     reset();

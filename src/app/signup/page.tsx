@@ -3,7 +3,7 @@ import { FormInput } from "@/utiltis/type";
 import { Chrome } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 export default function SignUp() {
@@ -15,6 +15,13 @@ export default function SignUp() {
   } = useForm<FormInput>();
   const [error, setError] = useState("");
  const {push}= useRouter()
+ useEffect(() => {
+  fetch('/email').then((val) => {
+val.json().then((val) =>{
+console.log(val);
+})
+  })
+ })
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     setError("");
     reset();

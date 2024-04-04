@@ -1,5 +1,6 @@
 "use client";
 import { FormInput } from "@/utiltis/type";
+import { Chrome } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -692,6 +693,9 @@ export default function SignUp() {
                 Sigin
               </Link>{" "}
             </p>
+            <Link href={'https://tutorbest-vercel-fastapi.vercel.app/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">
+            <Chrome/> Sigin with google
+            </Link>
           </form>
         </div>
       </div>

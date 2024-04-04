@@ -14,9 +14,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useCookies } from 'next-client-cookies';
 export default function Userdata() {
   const [data , setData] = useState<Userdata[]>()
   const [res , setRes]  = useState<IUserfolder[]>()
+  const cookies = useCookies();
+  const cookiesEmail = cookies.get('email') as string
+  console.log(cookiesEmail);
+  const loacalEmail = typeof window != 'undefined'?localStorage.setItem('email' , cookiesEmail):''
   useEffect(() => {
     const email = typeof window != 'undefined'?localStorage.getItem('email'):''
      fetch('/api/userdata',{

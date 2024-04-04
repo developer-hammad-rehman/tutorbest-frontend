@@ -20,7 +20,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
         <Navbar/>
-        <CookiesProvider>{children}</CookiesProvider>;
+        {/* <CookiesProvider>{children}</CookiesProvider>; */}
+        {children}
         <Footer/>
         </body>
     </html>

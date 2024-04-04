@@ -16,7 +16,7 @@ export default function SignUp() {
   const [error, setError] = useState("");
  const {push}= useRouter()
  useEffect(() => {
-  fetch('/email').then((val) => {
+  fetch('/api/email').then((val) => {
 val.json().then((val) =>{
 console.log(val);
 })

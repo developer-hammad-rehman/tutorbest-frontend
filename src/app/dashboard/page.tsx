@@ -18,6 +18,12 @@ import { useCookies } from 'next-client-cookies';
 export default function Userdata() {
   const [data , setData] = useState<Userdata[]>()
   const [res , setRes]  = useState<IUserfolder[]>()
+  const cookies= useCookies()
+  if(cookies.get('email')){
+    const cookiesEmail = cookies.get('email') as string
+    console.log(cookiesEmail);
+    const loacalEmail = typeof window != 'undefined'?(localStorage.getItem('email')?null:localStorage.setItem('email' , cookiesEmail)):null
+  }
   useEffect(() => {
     const email = typeof window != 'undefined'?localStorage.getItem('email'):''
      fetch('/api/userdata',{

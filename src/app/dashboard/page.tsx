@@ -21,7 +21,7 @@ export default function Userdata() {
   const cookies = useCookies();
   const cookiesEmail = cookies.get('email') as string
   console.log(cookiesEmail);
-  const loacalEmail = typeof window != 'undefined'?localStorage.setItem('email' , cookiesEmail):''
+  const loacalEmail = typeof window != 'undefined'?(localStorage.getItem('email')?null:localStorage.setItem('email' , cookiesEmail)):null
   useEffect(() => {
     const email = typeof window != 'undefined'?localStorage.getItem('email'):''
      fetch('/api/userdata',{

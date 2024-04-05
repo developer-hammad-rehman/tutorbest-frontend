@@ -56,6 +56,7 @@ export default function NavBar() {
       })
     ).json();
     console.log(fetcher2);
+    window.location.reload()
     }catch(srror){
       setLoading(false)
       alert("Please stable your internet")

@@ -19,8 +19,13 @@ import { useCookies } from 'next-client-cookies'
 
 export default function NavBar() {
   const [isLoading, setLoading] = useState(false);
+  const {refresh} = useRouter()
   const cookies= useCookies()
-   const {refresh , prefetch} =  useRouter()
+  if(cookies.get('email')){
+    const cookiesEmail = cookies.get('email') as string
+    console.log(cookiesEmail);
+    const loacalEmail = typeof window != 'undefined'?(localStorage.getItem('email')?null:localStorage.setItem('email' , cookiesEmail)):null
+  }
    const email = typeof window != 'undefined' ? localStorage.getItem('email') : ''
   const handlerUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     try{
@@ -61,7 +66,7 @@ export default function NavBar() {
     <input type="search" placeholder='Search Front' className='py-3 px-3 sm:px-5'/>
     
     <AlertDialog>
-  <AlertDialogTrigger><Image src={placeholder} onClick={() => refresh()} alt='' className='w-10 border rounded-full'/></AlertDialogTrigger>
+  <AlertDialogTrigger><Image src={placeholder} alt='' className='w-10 border rounded-full'/></AlertDialogTrigger>
   <AlertDialogContent>
     <AlertDialogHeader>
       <AlertDialogTitle className='text-black '>User Profile</AlertDialogTitle>

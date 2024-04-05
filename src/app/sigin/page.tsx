@@ -15,12 +15,7 @@ export default function Sigin() {
   } = useForm<FormInput>();
   const [error, setError] = useState("");
   const {push} = useRouter()
-  const cookies = useCookies()
-if(cookies.get('email')){
-  const cookiesEmail = cookies.get('email') as string
-  console.log(cookiesEmail);
-  const loacalEmail = typeof window != 'undefined'?(localStorage.getItem('email')?null:localStorage.setItem('email' , cookiesEmail)):null
-}
+ 
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     setError("");
     console.log(data);

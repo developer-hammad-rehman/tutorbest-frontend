@@ -2,6 +2,7 @@
 import React, { Suspense, useEffect, useState } from 'react'
 interface Question {
   question: string;
+  answer : string
 }
 
 interface AIQuestions {
@@ -12,6 +13,7 @@ export default function Flashcard() {
   const [res , setRes] = useState<AIQuestions>()
   const [count , setCount] = useState<number>(0)
   const [loading , setLoading] = useState(false)
+  const[swipe  , setSwipe] = useState(false)
   useEffect(() => {
     setLoading(true)
     fetch(`/api/flashcard?id=${id}`).then((val) => val.json()).then((val) => {
@@ -24,12 +26,15 @@ export default function Flashcard() {
   return (
     <div className='border-2 border-black rounded-lg px-5 py-4 mx-4 '>
       <h3 className='text-xl text-gray-600 border-b-4 border-gray-500 my-4'>Flashcard 📚</h3>
-     <div className='bg-purple-200 px-10 py-10 font-semibold text-2xl text-center md:text-3xl lg:text-4xl'>
-      <Suspense fallback={<div>loading...</div>}>
+     {swipe?<div className='bg-green-300 px-10 py-10 font-semibold text-2xl text-center md:text-3xl lg:text-4xl'>
+      {res?.questions[count].answer}
+     </div>:<div className='bg-purple-200 px-10 py-10 font-semibold text-2xl text-center md:text-3xl lg:text-4xl'>
       {res?.questions[count].question}
-      </Suspense>
-     </div>
-     <button className='bg-gray-400 p-4 text-white font-semibold mx-auto w-full' onClick={() => {count == 9  ? setCount(0) : setCount(count +  1)}} disabled={loading}>{loading?"Loading....":"Next"}</button>
+     </div>}
+<div className='flex justify-between w-full'>
+<button className='bg-gray-400 p-4 text-white font-semibold mx-auto w-full' onClick={() => {count == 9  ? setCount(0) : setCount(count +  1)}} disabled={loading}>{loading?"Loading....":"Next"}</button>
+     <button className='bg-green-700 p-4 text-white font-semibold mx-auto w-full' onClick={() => {swipe ? setSwipe(false):setSwipe(true)}}>{loading?null:"Swipe"}</button>
+</div>
     </div>
   )
 }

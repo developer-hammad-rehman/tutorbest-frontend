@@ -44,7 +44,7 @@ export default function Question() {
     return () => {};
   }, []);
   return (
-    <div className="bg-gray-50 mx-3 px-3 py-4 rounded-2xl flex flex-col gap-4 h-40 overflow-auto">
+    <div className="bg-gray-50 mx-3 px-3 py-4 rounded-2xl flex flex-col gap-4 h-80 overflow-auto">
       <h2 className="text-2xl font-bold border-b-2 border-gray-100">
         Question
       </h2>

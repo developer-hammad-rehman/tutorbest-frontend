@@ -100,7 +100,7 @@ const [val10, setVal10] = useState<string>();
        }
     </div>}
     {val6? val6 == res?.mcqs[5].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
-       <h4 className='text-xl font-bold'>{res?.mcqs[4].question}</h4>
+       <h4 className='text-xl font-bold'>{res?.mcqs[5].question}</h4>
        {
         res?.mcqs[5].options.map((val , i) => (
           <div className='flex gap-2' key={i}>
@@ -111,11 +111,44 @@ const [val10, setVal10] = useState<string>();
        }
     </div>}
     {val7? val7 == res?.mcqs[6].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
-       <h4 className='text-xl font-bold'>{res?.mcqs[4].question}</h4>
+       <h4 className='text-xl font-bold'>{res?.mcqs[6].question}</h4>
        {
         res?.mcqs[6].options.map((val , i) => (
           <div className='flex gap-2' key={i}>
             <input type="radio" value={val} onChange={(e) => setVal7(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val8? val8 == res?.mcqs[7].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[7].question}</h4>
+       {
+        res?.mcqs[7].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal8(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val9? val9 == res?.mcqs[8].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[8].question}</h4>
+       {
+        res?.mcqs[8].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal9(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val10? val10 == res?.mcqs[9].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[9].question}</h4>
+       {
+        res?.mcqs[9].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal10(e.target.value)}/>
             {val}
           </div>
         ))

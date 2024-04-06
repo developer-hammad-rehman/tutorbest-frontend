@@ -14,11 +14,16 @@ interface MCQ {
 export default function Question() {
     const [res, setRes] = useState<MCQsArray>()
 
-    const [val1 , setVal1] = useState<string>()
-
-    const [val2 , setVal2] = useState<string>()
-
-    const [val3 ,  setVal3] = useState<string>()
+const [val1, setVal1] = useState<string>();
+const [val2, setVal2] = useState<string>();
+const [val3, setVal3] = useState<string>();
+const [val4, setVal4] = useState<string>();
+const [val5, setVal5] = useState<string>();
+const [val6, setVal6] = useState<string>();
+const [val7, setVal7] = useState<string>();
+const [val8, setVal8] = useState<string>();
+const [val9, setVal9] = useState<string>();
+const [val10, setVal10] = useState<string>();
 
     const [loading , setLoading] = useState(true)
 
@@ -67,6 +72,50 @@ export default function Question() {
         res?.mcqs[2].options.map((val , i) => (
           <div className='flex gap-2' key={i}>
             <input type="radio" value={val} onChange={(e) => setVal3(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val4? val4 == res?.mcqs[3].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[3].question}</h4>
+       {
+        res?.mcqs[3].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal4(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val5? val5 == res?.mcqs[4].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[4].question}</h4>
+       {
+        res?.mcqs[4].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal5(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val6? val6 == res?.mcqs[5].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[4].question}</h4>
+       {
+        res?.mcqs[5].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal6(e.target.value)}/>
+            {val}
+          </div>
+        ))
+       }
+    </div>}
+    {val7? val7 == res?.mcqs[6].answer ? <div className='text-green-500'>&#x2713;Correct</div> : <div className='text-red-400'>&#10060;Incorrect</div> :<div className='flex flex-col'>
+       <h4 className='text-xl font-bold'>{res?.mcqs[4].question}</h4>
+       {
+        res?.mcqs[6].options.map((val , i) => (
+          <div className='flex gap-2' key={i}>
+            <input type="radio" value={val} onChange={(e) => setVal7(e.target.value)}/>
             {val}
           </div>
         ))

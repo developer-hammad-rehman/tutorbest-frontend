@@ -69,7 +69,8 @@ export default function SideBar() {
     window.location.reload()
     }catch(error){
       setLoading(false)
-      alert("Please Stable Your Internet")
+      console.log('Error : ' + ((error as Error).message))
+      alert("Something Went Wrong")
     }
   };
   return (

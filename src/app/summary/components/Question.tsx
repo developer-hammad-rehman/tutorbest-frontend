@@ -99,7 +99,9 @@ export default function Question() {
           )
         ) : (
           <div className="flex flex-col">
-            <h4 className="text-xl font-bold">{res?.mcqs[2].question}</h4>
+            <h4 className="text-xl font-bold">
+              {res?.mcqs[2].question}
+              </h4>
             {res?.mcqs[2].options.map((val, i) => (
               <div className="flex gap-2" key={i}>
                 <input

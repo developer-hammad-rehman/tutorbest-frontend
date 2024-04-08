@@ -50,8 +50,11 @@ export default function SideBar() {
         method: "POST",
         body: formdata,
       })
-      
     ).json();
+    if (fetcher.error.code == '413') {
+      alert("The File is to Large")
+      throw new Error(fetcher.error.message)
+    }
     setLoading(false);
     const email = localStorage.getItem("email");
 

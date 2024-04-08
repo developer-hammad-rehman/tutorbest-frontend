@@ -46,13 +46,13 @@ export default function SideBar() {
     formdata.append("file", file);
     console.log(formdata.get('file'));
     const fetcher = await (
-      await fetch("https://tutorbest-vercel-fastapi.vercel.app/fileupload", {
+      await fetch("/api/fileupload", {
         method: "POST",
         body: formdata,
       })
     ).json();
     if (fetcher.error.code == '413') {
-      alert("The File is to Large")
+      alert("The File is too Large")
       throw new Error(fetcher.error.message)
     }
     setLoading(false);

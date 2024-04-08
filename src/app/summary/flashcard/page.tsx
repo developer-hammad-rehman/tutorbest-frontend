@@ -32,7 +32,13 @@ export default function Flashcard() {
       {res?.questions[count].question}
      </div>}
 <div className='flex justify-between w-full'>
-<button className='bg-gray-400 p-4 text-white font-semibold mx-auto w-full' onClick={() => {count == 9  ? setCount(0) : setCount(count +  1)}} disabled={loading}>{loading?"Loading....":"Next"}</button>
+<button className='bg-gray-400 p-4 text-white font-semibold mx-auto w-full' onClick={() => {
+  count == 9  ? setCount(0) : setCount(count +  1)
+  setSwipe(false)
+}
+  } disabled={loading}>
+    {loading?"Loading....":"Next"}
+    </button>
      <button className='bg-green-700 p-4 text-white font-semibold mx-auto w-full' onClick={() => {swipe ? setSwipe(false):setSwipe(true)}}>{loading?null:"Swipe"}</button>
 </div>
     </div>

@@ -51,7 +51,7 @@ export default function SideBar() {
         body: formdata,
       })
     ).json();
-    if (fetcher.error.code == '413') {
+    if (fetcher.error.code) {
       alert("The File is too Large")
       throw new Error(fetcher.error.message)
     }

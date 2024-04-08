@@ -33,7 +33,7 @@ export default function Flashcard() {
      </div>}
 <div className='flex justify-between w-full'>
 <button className='bg-gray-400 p-4 text-white font-semibold mx-auto w-full' onClick={() => {
-  count == res?.questions.length  ? setCount(0) : setCount(count +  1)
+  count == res?.questions.length as number - 1  ? setCount(0) : setCount(count +  1)
   setSwipe(false)
 }
   } disabled={loading}>

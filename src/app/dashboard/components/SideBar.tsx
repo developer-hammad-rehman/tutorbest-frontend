@@ -49,13 +49,11 @@ export default function SideBar() {
       await fetch("https://tutorbest-vercel-fastapi.vercel.app/fileupload", {
         method: "POST",
         body: formdata,
+        mode:"no-cors"
       })
     ).json();
-    // if (fetcher.error.code) {
-    //   alert("The File is too Large")
-    //   throw new Error(fetcher.error.message)
-    // }
     setLoading(false);
+    console.log(fetcher)
     const email = localStorage.getItem("email");
 
     

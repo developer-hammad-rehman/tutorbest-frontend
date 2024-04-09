@@ -39,6 +39,7 @@ export default function NavBar() {
       await fetch("https://tutorbest-vercel-fastapi.vercel.app/fileupload", {
         method: "POST",
         body: formdata,
+        mode:'no-cors'
       })
     ).json();
     setLoading(false);

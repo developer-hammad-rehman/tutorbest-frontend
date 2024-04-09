@@ -40,6 +40,7 @@ export default function NavBar() {
         method: "POST",
         body: formdata,
       })
+      
     ).json();
     setLoading(false);
     console.log(fetcher);

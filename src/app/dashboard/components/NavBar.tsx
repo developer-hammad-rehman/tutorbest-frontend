@@ -36,7 +36,7 @@ export default function NavBar() {
     formdata.append("file", file);
     console.log(formdata.get('file'));
     const fetcher = await (
-      await fetch("https://tutorbest-vercel-fastapi.vercel.app/fileupload", {
+      await fetch("/api/fileupload", {
         method: "POST",
         body: formdata,
       })
@@ -59,7 +59,7 @@ export default function NavBar() {
     window.location.reload()
     }catch(srror){
       setLoading(false)
-      alert("Please stable your internet")
+      alert("Something Went Wrong")
     }
   };
   return (

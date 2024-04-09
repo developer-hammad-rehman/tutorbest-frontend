@@ -41,10 +41,10 @@ const [userAnswer , setUserAnswer] = useState<string[]>([])
         <div className="flex flex-col gap-3">
         {
           res?.mcqs.map((val , i) =>(
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5" key={i}>
           <h4 className="text-2xl font-bold">{val.question}</h4>
           {val.options.map((items , i) => (
-            <div className="flex gap-3">
+            <div className="flex gap-3" key={i}>
               <input type="radio" value={items}  onChange={(e) => setUserAnswer([...userAnswer, e.target.value])}/>
               {items}
             </div>

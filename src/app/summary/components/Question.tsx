@@ -57,6 +57,7 @@ const [userAnswer , setUserAnswer] = useState<string[]>([])
       <button
         className="bg-purple-300 p-4 text-xl text-white"
         onClick={() => window.location.reload()}
+        disabled={loading?true:false}
       >
         {loading ? "Loading..." : "Load More"}
       </button>

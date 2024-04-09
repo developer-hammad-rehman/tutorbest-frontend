@@ -36,7 +36,7 @@ export default function NavBar() {
     formdata.append("file", file);
     console.log(formdata.get('file'));
     const fetcher = await (
-      await fetch("/api/fileupload", {
+      await fetch("https://tutorbest-vercel-fastapi.vercel.app/fileupload", {
         method: "POST",
         body: formdata,
       })

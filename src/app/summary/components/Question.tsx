@@ -23,7 +23,7 @@ const [userAnswer , setUserAnswer] = useState<string[]>([])
     const id =
       typeof window != "undefined" ? String(localStorage.getItem("id")) : 0;
 
-    fetch(`http://127.0.0.1:8000/question?id=${id}`)
+    fetch(`/api/question?id=${id}`)
       .then((val) => val.json())
       .then((val) => {
         console.log(val);

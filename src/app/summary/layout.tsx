@@ -17,7 +17,7 @@ export default function layout(
         <div className="hidden lg:flex lg:col-span-3 lg:row-span-12 h-full">
           <Sidebar/>
         </div>
-        <div className="col-span-12 row-span-12 lg:col-span-6 lg:row-span-12">
+        <div className="col-span-12 row-span-12 lg:col-span-6 lg:row-span-12 my-6">
         {children}
         </div>
         <div className="hidden lg:flex lg:col-span-3 lg:row-span-12">

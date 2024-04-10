@@ -75,7 +75,7 @@ export default function SideBar() {
     }
   };
   return (
-    <aside className="px-10 border-r-2 border-gray-300 w-1/3 hidden sm:flex flex-col items-center gap-16 overflow-auto py-7">
+    <aside className="px-10 border-r-2 border-gray-300  w-1/3 hidden sm:flex flex-col items-center gap-16 overflow-auto py-7">
       {isshow ? (
         <div className="mx-auto w-1/2 h-80 bg-gray-100 absolute z-50 top-10 right-[90%] left-[40%] rounded-2xl flex flex-col justify-center items-center border-4 border-dotted">
           <div className="flex justify-between items-center w-full px-5">

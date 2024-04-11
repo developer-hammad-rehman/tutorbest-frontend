@@ -34,8 +34,7 @@ console.log(userAnswer)
         });
         setLoading(false);
         setLoad('')
-      });
-
+      })
     return () => {};
   }, [load]);
   return (
@@ -46,16 +45,23 @@ console.log(userAnswer)
         <div className="flex flex-col gap-3">
         {
           res?.mcqs.map((val , i) =>(
-        <div className="flex flex-col gap-5 border-2 bg-gray-100 px-3 py-3 rounded-xl" key={i}>
-          <h4 className="text-2xl font-bold">Q{i+1}. {val.question}</h4>
-          {val.options.map((items , i) => (
-            <div className="flex gap-3" key={i}>
-              <input type="radio" value={items}  onChange={(e) => setUserAnswer([...userAnswer, e.target.value])}/>
-              {items}
-            </div>
-          ))}
-          <p className="text-green-400 font-bold">Correct Answer : {val.answer}</p>
-        </div>
+            userAnswer[i]? <div className="flex flex-col gap-5 border-2 bg-gray-100 px-3 py-3 rounded-xl">
+              <h4 className="text-2xl font-bold">Q{i+1}. {val.question}</h4>
+              <p className="text-xl font-bold">User input : {userAnswer[i]}</p>
+            </div>:<div className="flex flex-col gap-5 border-2 bg-gray-100 px-3 py-3 rounded-xl" key={i}>
+            <h4 className="text-2xl font-bold">Q{i+1}. {val.question}</h4>
+            {val.options.map((items , i) => (
+              <div className="flex gap-3" key={i}>
+                <input type="radio" value={items} name={val.question} onChange={(e) => {
+                  const answer = val.answer;
+                  const userinput = e.target.value
+                  const cond = answer == userinput
+                  cond?setUserAnswer([...userAnswer, "Correct"]):setUserAnswer([...userAnswer, "Incorrect"])
+                }}/>
+                {items}
+              </div>
+            ))}
+          </div>
           ))
         }
         </div>

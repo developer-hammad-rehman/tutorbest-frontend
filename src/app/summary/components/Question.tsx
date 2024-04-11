@@ -45,7 +45,7 @@ console.log(userAnswer)
         <div className="flex flex-col gap-3">
         {
           res?.mcqs.map((val , i) =>(
-            userAnswer[i]? <div className="flex flex-col gap-5 border-2 bg-gray-100 px-3 py-3 rounded-xl">
+            userAnswer[i]? <div className="flex flex-col gap-5 border-2 bg-gray-100 px-3 py-3 rounded-xl" key={i}>
               <h4 className="text-2xl font-bold">Q{i+1}. {val.question}</h4>
               <p className="text-xl font-bold">User input : {userAnswer[i]}</p>
             </div>:<div className="flex flex-col gap-5 border-2 bg-gray-100 px-3 py-3 rounded-xl" key={i}>

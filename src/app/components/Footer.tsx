@@ -10,7 +10,7 @@ export default function Footer() {
  if (path.startsWith('/summary')) {
   return null
  }else{
-  return<div className='border-t-2 border-gray-800 my-2 flex flex-col lg:flex-row w-full items-center justify-between px-5 gap-4 bg-gradient-to-tr from-[#2D155E] to-black'>
+  return<div className='border-t-2  border-gray-800   flex flex-col lg:flex-row w-full items-center justify-between px-5 gap-4 bg-gradient-to-tr from-[#2D155E] to-black'>
   <div className='text-white'>
   <Image src={logo} alt='logo' className='w-40 cursor-pointer' onClick={() => router.push('/')}/>
   @Copyright 2024

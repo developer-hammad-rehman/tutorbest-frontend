@@ -46,7 +46,7 @@ export default function SideBar() {
     formdata.append("file", file);
     console.log(formdata.get('file'));
     const fetcher = await (
-      await fetch("https://tutorbest-vercel-fastapi.vercel.app/fileupload", {
+      await fetch("https://tutorbest-2jtkztuufq-uc.a.run.app/fileupload", {
         method: "POST",
         body: formdata,
       })
@@ -60,7 +60,7 @@ export default function SideBar() {
     const fetcher2 = await (
       await fetch("api/usercreate", {
         method: "POST",
-        body: JSON.stringify({ email: email, filename: file.name }),
+        body: JSON.stringify({ email: email, filename: file.name  ,summary : fetcher}),
         headers: {
           "Content-Type": "application/json",
         },

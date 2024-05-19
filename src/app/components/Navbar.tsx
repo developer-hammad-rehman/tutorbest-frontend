@@ -20,8 +20,8 @@ const path = usePathname()
             <li className='hover:border hover:border-gray-700 hover:bg-gray-700 cursor-pointer font-bold p-2 rounded-full'><Link href={'/#3'}>Prezi</Link></li>
         </ul>
         <div className='text-white flex gap-5'>
-            <button onClick={() => router.push('/sigin')}>Sigin</button>
-            <button className='bg-purple-700 p-3 font-bold rounded-2xl' onClick={() => router.push('/signup')}> Sigup -{">"}</button>
+            <button onClick={() => router.push('/sigin')}>Login</button>
+            <button className='bg-purple-700 p-3 font-bold rounded-2xl' onClick={() => router.push('/signup')}> Sign Up -{">"}</button>
         </div>
     </header>
   )

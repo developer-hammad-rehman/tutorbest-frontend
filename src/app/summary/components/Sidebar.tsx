@@ -10,8 +10,8 @@ export default function Sidebar() {
   return (
     <div className='bg-gray-50 border-2 border-white  shadow-2xl w-full h-full flex flex-col justify-between py-10 px-10'>
     <div className='flex flex-col gap-5'>
-    <Button icon={<StickyNote />}  href={`/summary/${id}`} text='Study Guide'/>
-    <Button  icon={<FileQuestion />} href='/summary/question' text='Question'/>
+    <Button icon={<StickyNote />}  href={`/summary/${id}`} text='Riassunto'/>
+    <Button  icon={<FileQuestion />} href='/summary/question' text='Domande'/>
     <Button  icon={<CreditCard />} href='/summary/flashcard' text='Flashcard'/>
     </div>
     <HoverButton text='Dashboard ->'/>

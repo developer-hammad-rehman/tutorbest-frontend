@@ -65,7 +65,7 @@ export default function NavBar() {
   };
   return (
    <header className='flex justify-between px-2 py-2 items-center border-b border-gray-300 gap-3'>
-    <input type="search" placeholder='Search Front' className='py-3 px-3 sm:px-5'/>
+    <input type="search" placeholder='Ricerca file' className='py-3 px-3 sm:px-5'/>
     
     <AlertDialog>
   <AlertDialogTrigger><Image src={placeholder} alt='' className='w-10 border rounded-full'/></AlertDialogTrigger>

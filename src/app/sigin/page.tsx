@@ -43,7 +43,7 @@ export default function Sigin() {
       <div className="bg-[#100D20] px-7 py-10 flex items-center my-6 justify-around rounded-xl">
         <div className="hidden lg:flex flex-col gap-3 items-center">
           <h5 className="text-3xl font-bold text-white">
-            TutorBest sblocca il tou potenziale
+            TutorBest sblocca il tuo potenziale
           </h5>
           <svg
             width="428"
@@ -695,7 +695,7 @@ export default function Sigin() {
               </Link>{" "}
             </p>
             <Link href={'/api/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">
-            <Chrome/> Sigin with google
+            <Chrome/> Login with google
             </Link>
           </form>
         </div>

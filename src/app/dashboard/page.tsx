@@ -78,7 +78,7 @@ export default function Userdata() {
       ))}
     </div>
     </div>
-      <h1 className='text-xl font-bold'>Folders</h1>
+      <h1 className='text-2xl font-bold'>Cartelle</h1>
     <div className='flex gap-4  flex-wrap justify-center items-center'>
       {
         res?.map((items) =>(

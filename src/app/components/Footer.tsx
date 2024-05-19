@@ -18,8 +18,8 @@ export default function Footer() {
   <div>
   <h5 className='text-xl font-bold text-gray-50'>Website</h5>
   <ul className='flex flex-col gap-2 justify-center items-center text-gray-400'>
-    <Link href={'/sigin'}>Sigin</Link>
-    <Link href={'/sigup'}>SigUp</Link>
+    <Link href={'/sigin'}>Login</Link>
+    <Link href={'/sigup'}>Sign Up</Link>
   </ul>
   </div>
   <div>

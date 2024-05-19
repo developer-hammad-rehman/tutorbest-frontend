@@ -33,6 +33,7 @@ answer:fetcher.message
    }
   return (
     <div className= 'hidden sm:flex sm:flex-col bg-gray-100 border rounded-lg h-64 overflow-auto'>
+        <h1 className='text-3xl font-bold mx-auto py-4 italic border-b-2 border-b-gray-500 tracking-widest'>Chat Bot</h1>
         <div>
         <div className='h-full w-full px-4 py-3 flex flex-col gap-4'>
         {

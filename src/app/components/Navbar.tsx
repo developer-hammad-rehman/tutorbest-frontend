@@ -13,7 +13,7 @@ const path = usePathname()
  } else {
   return (
     <header className='bg-[#0E0628] flex justify-around items-center p-3 sticky top-0 z-50 ' >
-        <Image src={logo} alt='Logo' className='w-32 cursor-pointer bg-white rounded-xl' onClick={() => router.push('/')}/>
+        <Image src={logo} alt='Logo' className='w-32 cursor-pointer rounded-xl' onClick={() => router.push('/')}/>
         <ul className='text-white hidden sm:flex gap-4 ' >
             <li className='hover:border hover:border-gray-700 hover:bg-gray-700 cursor-pointer font-bold p-2 rounded-full'><Link href={'/#1'}>Home</Link></li>
             <li className='hover:border hover:border-gray-700 hover:bg-gray-700 cursor-pointer font-bold p-2 rounded-full'><Link href={'/#2'}>Tools</Link></li>

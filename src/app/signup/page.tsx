@@ -683,14 +683,14 @@ export default function SignUp() {
               {...register("password",{required:"Enter Your Password"})}
             />
             <p className="text-red-400">{errors.password?.message}</p>
-            <button className="px-7 bg-[#6A37C4] py-3 font-bold text-white">
-              Sumbit
+            <button  className="px-7 bg-[#6A37C4] py-3 font-bold text-white">
+            Sottoporre
             </button>
             {error && <p className="text-red-400">{error}</p>}
             <p className="text-white">
               Already Have Account ?{" "}
               <Link href={"/sigin"} className="text-purple-300">
-                Sigin
+                Login
               </Link>{" "}
             </p>
             <Link href={'/api/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">

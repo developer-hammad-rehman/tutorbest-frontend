@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center gap-10 bg-gradient-to-tr from-[#2D155E] to-black " >
       <Hero/>
-      <Player />
+      {/* <Player /> */}
       <Card/>
       <AboveFooter/>
       <Prize/>

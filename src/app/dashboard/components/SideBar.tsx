@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import logo from "../../../../public/logo1.png";
+import logo from "../../../../public/logo.png";
 import Image from "next/image";
 import { CiClock2, CiFolderOn } from "react-icons/ci";
 import { SiPowerpages } from "react-icons/si";
@@ -112,7 +112,7 @@ export default function SideBar() {
           </div>
         </div>
       ) : null}
-      <Image src={logo} alt="logo" className="w-40" />
+      <Image src={logo} alt="logo" className="w-40 bg-gray-400 rounded-xl" />
       <ul className="flex gap-5 flex-col ">
         <li
           className="bg-purple-500 text-xs sm:text-sm md:text-base lg:text-xl p-2 sm:p-3 md:p-4 lg:p-6 cursor-pointer  font-bold text-gray-50 rounded-xl flex gap-x-3 items-center"

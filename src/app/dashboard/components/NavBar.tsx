@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image'
 import React, { useState } from 'react'
 import placeholder from '../../../../public/img1.jpg'

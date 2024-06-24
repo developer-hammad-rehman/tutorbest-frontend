@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 export default function Prize() {
   return (
    <>
@@ -27,7 +28,7 @@ export default function Prize() {
     <li>* 24.90 CHF/€</li>
     <li>* Nessuno sconto</li>
 </ul>
-    <button className='p-3 bg-[#151225] font-bold text-white'>Abbonati -{">"}</button>
+    <Link href={'https://buy.stripe.com/3cs9Cj4D64LU2Mo000'} className='p-3 bg-[#151225] font-bold text-white' >Abbonati -{">"}</Link>
 </div>
    </div>
    <div className='flex flex-col gap-10 border-2  bg-gradient-to-t from-[#301E57] to-[#0E0628] border-gray-800 px-8 py-5'>
@@ -48,7 +49,7 @@ export default function Prize() {
     <li>* 202.80 CHF/€</li>
     <li>* Sconto del 40%</li>
 </ul>
-    <button className='p-3 bg-[#151225] font-bold text-white'>Abbonati -{">"}</button>
+<Link href={'https://buy.stripe.com/dR67ub1qUbai72E289'} className='p-3 bg-[#151225] font-bold text-white' >Abbonati -{">"}</Link>
 </div>
    </div>
    </div>

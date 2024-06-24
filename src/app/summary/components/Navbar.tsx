@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
    <header className='flex justify-between items-center border px-6'>
     <Link href={'/'}>
-        <Image src={logo} alt='logo' className='w-20 sm:w-36 bg-slate-500'/>
+        <Image src={logo} alt='logo' className='w-20 sm:w-36 bg-slate-500 rounded-2xl'/>
     </Link >
     {isClient?<div className='hidden lg:flex lg:text-base'>
         | {email}

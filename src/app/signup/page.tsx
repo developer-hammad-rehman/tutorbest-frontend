@@ -672,15 +672,15 @@ export default function SignUp() {
             <input
               type="email"
               className="px-10 py-4 "
-              placeholder="Enter Your Email"
-              {...register("email",{required:"Enter Your Email"})}
+              placeholder="Invia Email"
+              {...register("email",{required:"Invia Email"})}
             />
             <p className="text-red-400">{errors.email?.message}</p>
             <input
               type="password"
               className="px-10 py-4 "
-              placeholder="Enter Your Password"
-              {...register("password",{required:"Enter Your Password"})}
+              placeholder="Invia Password"
+              {...register("password",{required:"Invia Password"})}
             />
             <p className="text-red-400">{errors.password?.message}</p>
             <button  className="px-7 bg-[#6A37C4] py-3 font-bold text-white">

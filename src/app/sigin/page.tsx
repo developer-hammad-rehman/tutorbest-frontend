@@ -673,15 +673,15 @@ export default function Sigin() {
             <input
               type="email"
               className="px-10 py-4 "
-              placeholder="Enter Your Email"
-              {...register("email", { required: "Enter Your Email" })}
+              placeholder="Invia Email"
+              {...register("email", { required: "Invia Email" })}
             />
             <p className="text-red-400">{errors.email?.message}</p>
             <input
               type="password"
               className="px-10 py-4 "
-              placeholder="Enter Your Password"
-              {...register("password", { required: "Enter Your Password" })}
+              placeholder="Invia Password"
+              {...register("password", { required: "Invia Password" })}
             />
             <p className="text-red-400">{errors.password?.message}</p>
             <button className="px-7 bg-[#6A37C4] py-3 font-bold text-white">
@@ -689,9 +689,9 @@ export default function Sigin() {
             </button>
             {error && <p className="text-red-400">{error}</p>}
             <p className="text-white">
-              Create Account ?{" "}
+              Utente nuovo ?{" "}
               <Link href={"/signup"} className="text-purple-300">
-                Create an account
+                Crea account
               </Link>{" "}
             </p>
             <Link href={'/api/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">

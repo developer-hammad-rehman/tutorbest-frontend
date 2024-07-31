@@ -7,7 +7,7 @@ const nextConfig = {
             destination: 'https://tutorbest-2jtkztuufq-uc.a.run.app/:path*'
           }
         ]
-      }
+      },
 };
 
 export default nextConfig;

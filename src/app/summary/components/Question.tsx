@@ -39,7 +39,7 @@ console.log(userAnswer)
     return () => {};
   }, [load]);
   return (
-    <div className="bg-gray-50 mx-3 px-3 py-4 rounded-2xl flex flex-col gap-4 h-80 overflow-auto border-2 ">
+    <div className="bg-gray-50 mx-3 px-3 py-4 rounded-2xl flex flex-col gap-4  h-screen overflow-auto border-2 ">
       <h2 className="text-2xl font-bold py-4 border-b-2 border-gray-950 w-full flex justify-between">
         Question 🤔
         <p className="text-sm text-gray-500 flex items-center justify-center gap-5">Show Answer <Switch  onCheckedChange={(e) => show? setShow(false) : setShow(true)}/></p>

@@ -94,14 +94,14 @@ export default function Card() {
             Affronta tutte le materie con maggiore serenità
           </h1>
           <p className="text-white text-xs sm:text-base font-bold">
-            Trasforma istantaneamente appunti, PDF, video e PowerPoint in:
+            Trasforma istantaneamente appunti, PDF:
             <br />
             - Riassunti
             <br />
             - Flashcards
             <br />
             - Mappe mentali
-            <br />- Quiz Inoltre accedi a: - Chat Al personalizzata - Tabelle di
+            <br />- Quiz Inoltre accedi a Chat AI personalizzata - Tabelle di
             organizzazione di studio - Trasformazione testi in Bionic Reading
           </p>
           <button

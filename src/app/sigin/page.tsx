@@ -7,9 +7,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Chrome } from "lucide-react";
 import { useCookies } from "next-client-cookies";
 export default function Sigin() {
-  const searchParams = useSearchParams();
-  const cookies = useCookies();
-
+  const searchParams = useSearchParams()
+    const cookies = useCookies()
   const {
     handleSubmit,
     register,
@@ -17,14 +16,16 @@ export default function Sigin() {
     formState: { errors },
   } = useForm<FormInput>();
   const [error, setError] = useState("");
-  const { push } = useRouter();
-  const token = searchParams.get("code");
-  const email = searchParams.get("email");
-  if (token && email) {
-    cookies.set("token", token);
-    cookies.set("email", email);
-    push("/dashboard");
-  }
+  const {push} = useRouter()
+  useEffect(() => {
+    const token = searchParams.get("code")
+  const email = searchParams.get("email")
+      if(token && email){
+         cookies.set("token", token)
+         cookies.set("email", email)
+         push('/dashboard')
+      }
+  })
 
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     setError("");
@@ -39,10 +40,10 @@ export default function Sigin() {
     const res = await fetcher.json();
     if (res.detail) {
       setError(res.detail);
-    } else {
-      localStorage.setItem("email", data.email);
-      push("/dashboard");
-    }
+    }else{
+      localStorage.setItem('email' , data.email)
+      push('/dashboard')
+     }
     reset();
   };
   return (
@@ -695,7 +696,7 @@ export default function Sigin() {
             />
             <p className="text-red-400">{errors.password?.message}</p>
             <button className="px-7 bg-[#6A37C4] py-3 font-bold text-white">
-              Sottoporre
+            Sottoporre
             </button>
             {error && <p className="text-red-400">{error}</p>}
             <p className="text-white">
@@ -704,13 +705,8 @@ export default function Sigin() {
                 Crea account
               </Link>{" "}
             </p>
-            <Link
-              href={
-                "https://tutorbest-frontend.vercel.app/api/api/google/login"
-              }
-              className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl"
-            >
-              <Chrome /> Login with google
+            <Link href={'https://tutorbest-frontend.vercel.app/api/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">
+            <Chrome/> Login with google
             </Link>
           </form>
         </div>

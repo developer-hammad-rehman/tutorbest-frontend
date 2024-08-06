@@ -15,7 +15,7 @@ export default function Sigin() {
         if(token && email){
            cookies.set("token", token)
            cookies.set("email", email)
-           refresh()
+           push('/dashboard')
         }
     })
   const {

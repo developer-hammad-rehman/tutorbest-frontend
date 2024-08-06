@@ -5,7 +5,7 @@ import { AiOutlineQuestionCircle } from 'react-icons/ai'
 import fileImage  from '../../../public/file.png'
 import Image from 'next/image'
 import Link from 'next/link'
-import { EllipsisVertical, Flag, Folder, Trash2 } from 'lucide-react'
+import { AlignCenter, EllipsisVertical, Flag, Folder, Trash2 } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +14,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+
 import { useCookies } from 'next-client-cookies';
 export default function Userdata() {
   const [data , setData] = useState<Userdata[]>()
@@ -59,7 +71,15 @@ export default function Userdata() {
   <DropdownMenuContent>
     <DropdownMenuLabel>Setting</DropdownMenuLabel>
     <DropdownMenuSeparator />
-    <DropdownMenuItem className='flex agp-3'><Flag />Report</DropdownMenuItem>
+    <DropdownMenuItem className='flex gap-3'><Flag />Report</DropdownMenuItem>
+    <DropdownMenuItem className='flex gap-3' onClick={() => {
+      const filename = prompt("Enter Your File Name")
+      const fetcher =  fetch(`/api/renamefile?id=${val.id}&filename=${filename}`)
+       .then((val) => val.json()).then((val) => {
+        console.log(val)
+        window.location.reload()
+      })
+    }}><AlignCenter />Rename</DropdownMenuItem>
     <DropdownMenuItem className='text-red-400 flex gap-3' onClick={() =>{
       fetch(`/api/userdata/${val.id}` , {
         method:"DELETE",

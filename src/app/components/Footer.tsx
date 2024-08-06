@@ -19,8 +19,7 @@ export default function Footer() {
             className="w-40 cursor-pointer"
             onClick={() => router.push("/")}
           />
-          Nextrend, LLC 1111B S Governors Ave #20753 Dover, DE 19904 001 (302)
-          310-4370
+         
         </div>
         <div>
           <h5 className="text-xl font-bold text-gray-50">Website</h5>

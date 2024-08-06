@@ -1,46 +1,66 @@
 'use client'
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+
 interface Question {
   question: string;
-  answer : string
+  answer: string;
 }
 
 interface AIQuestions {
   questions: Question[];
 }
+
 export default function Flashcard() {
-  const id = typeof window != 'undefined'?String(localStorage.getItem('id')):0
-  const [res , setRes] = useState<AIQuestions>()
-  const [count , setCount] = useState<number>(0)
-  const [loading , setLoading] = useState(false)
-  const[swipe  , setSwipe] = useState(false)
+  const id = typeof window !== 'undefined' ? localStorage.getItem('id'):null;
+  const [res, setRes] = useState<AIQuestions | null>(null);
+  const [count, setCount] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [swipe, setSwipe] = useState<boolean>(false);
+
   useEffect(() => {
-    setLoading(true)
-    fetch(`/api/flashcard?id=${id}`).then((val) => val.json()).then((val) => {
-      console.log(val);
-      setRes(val)
-      setLoading(false)
-    })
-  },[])
-  console.log(count);
+    fetch(`/api/flashcard?id=${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.clear()
+        console.log(data);
+        setRes(data);
+        setLoading(false);
+      })
+      .catch((error) => console.error('Fetch error:', error));
+  });
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+      </div>
+    );
+  }
+
   return (
-    <div className='border-2 border-black rounded-lg px-5 py-4 mx-4 '>
-      <h3 className='text-xl text-gray-600 border-b-4 border-gray-500 my-4'>Flashcard 📚</h3>
-     {swipe?<div className='bg-green-300 px-10 py-10 font-semibold text-2xl text-center md:text-3xl lg:text-4xl'>
-      {res?.questions[count].answer}
-     </div>:<div className='bg-purple-200 px-10 py-10 font-semibold text-2xl text-center md:text-3xl lg:text-4xl'>
-      {res?.questions[count].question}
-     </div>}
-<div className='flex justify-between w-full'>
-<button className='bg-gray-400 p-4 text-white font-semibold mx-auto w-full' onClick={() => {
-  count == res?.questions.length as number - 1  ? setCount(0) : setCount(count +  1)
-  setSwipe(false)
-}
-  } disabled={loading}>
-    {loading?"Loading....":"Next"}
-    </button>
-     <button className='bg-green-700 p-4 text-white font-semibold mx-auto w-full' onClick={() => {swipe ? setSwipe(false):setSwipe(true)}}>{loading?null:"Swipe"}</button>
-</div>
+    <div className='max-w-md mx-auto my-10 bg-white shadow-lg rounded-lg overflow-hidden'>
+      <h3 className='text-xl font-semibold bg-purple-200 text-gray-800 py-4 text-center border-b'>Flashcard 📚</h3>
+      <div className={`p-6 text-2xl font-semibold text-center ${swipe ? 'bg-purple-300' : 'bg-blue-300'}`}>
+        {swipe ? res?.questions[count]?.answer : res?.questions[count]?.question}
+      </div>
+      <div className='grid grid-cols-2 gap-3 p-4'>
+        <button
+          className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded shadow-lg transition duration-200 ease-in-out'
+          onClick={() => {
+            const nextCount = count === (res?.questions.length ?? 0) - 1 ? 0 : count + 1;
+            setCount(nextCount);
+            setSwipe(false);
+          }}
+        >
+          Next
+        </button>
+        <button
+          className='bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 rounded shadow-lg transition duration-200 ease-in-out'
+          onClick={() => setSwipe(!swipe)}
+        >
+          {swipe ? 'Show Question' : 'Show Answer'}
+        </button>
+      </div>
     </div>
-  )
+  );
 }

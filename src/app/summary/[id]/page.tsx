@@ -3,6 +3,7 @@ import { Switch } from '@/components/ui/switch';
 import { UserAi } from '@/utiltis/type';
 import React, { Suspense, useEffect, useState } from 'react'
 import Markdown from 'react-markdown';
+import BionicText from '../components/Bionic';
 
 export default function Summary({params} : {params : {id : number}}) {
   const [data , setData] = React.useState<UserAi[]>()
@@ -29,7 +30,8 @@ export default function Summary({params} : {params : {id : number}}) {
           <h1 className='font-bold text-xl w-60 truncate'>{title}&ldquo;</h1>
           <div className='flex items-center justify-center gap-3'><span>Bionic Read</span><Switch onCheckedChange={() => bionic? setBionic(false) : setBionic(true)}/></div>
           </div>
-       <Suspense fallback={<div>Loading...</div>}><Markdown className={bionic?"h-96 overflow-y-scroll overflow-x-hidden text-xl font-semibold italic font-serif":'h-96 overflow-y-scroll overflow-x-hidden'}>{data?data[0].summary:null}</Markdown></Suspense>
+
+       <Suspense fallback={<div>Loading...</div>}>{bionic?<BionicText text={data?data[0].summary:""}/>:<Markdown className={'h-96 overflow-y-scroll overflow-x-hidden'}>{data?data[0].summary:null}</Markdown>}</Suspense>
         </div>
        </div>
   )

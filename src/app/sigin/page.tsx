@@ -1,12 +1,22 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FormInput } from "@/utiltis/type";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Chrome } from "lucide-react";
 import { useCookies } from "next-client-cookies";
 export default function Sigin() {
+  const searchParams = useSearchParams()
+    const token = searchParams.get("code")
+    const email = searchParams.get("email")
+    const cookies = useCookies()
+    useEffect(() => {
+        if(token && email){
+           cookies.set("token", token)
+           cookies.set("email", email)
+        }
+    })
   const {
     handleSubmit,
     register,
@@ -694,7 +704,7 @@ export default function Sigin() {
                 Crea account
               </Link>{" "}
             </p>
-            <Link href={'/api/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">
+            <Link href={'https://tutorbest-frontend.vercel.app/api/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">
             <Chrome/> Login with google
             </Link>
           </form>

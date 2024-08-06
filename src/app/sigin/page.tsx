@@ -15,6 +15,7 @@ export default function Sigin() {
         if(token && email){
            cookies.set("token", token)
            cookies.set("email", email)
+           refresh()
         }
     })
   const {
@@ -24,7 +25,7 @@ export default function Sigin() {
     formState: { errors },
   } = useForm<FormInput>();
   const [error, setError] = useState("");
-  const {push} = useRouter()
+  const {push ,refresh} = useRouter()
  
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     setError("");

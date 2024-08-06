@@ -8,16 +8,8 @@ import { Chrome } from "lucide-react";
 import { useCookies } from "next-client-cookies";
 export default function Sigin() {
   const searchParams = useSearchParams()
-    const token = searchParams.get("code")
-    const email = searchParams.get("email")
     const cookies = useCookies()
-    useEffect(() => {
-        if(token && email){
-           cookies.set("token", token)
-           cookies.set("email", email)
-           push('/dashboard')
-        }
-    })
+
   const {
     handleSubmit,
     register,
@@ -25,8 +17,17 @@ export default function Sigin() {
     formState: { errors },
   } = useForm<FormInput>();
   const [error, setError] = useState("");
-  const {push ,refresh} = useRouter()
- 
+  const {push} = useRouter()
+  useEffect(() => {
+    const token = searchParams.get("code")
+  const email = searchParams.get("email")
+      if(token && email){
+         cookies.set("token", token)
+         cookies.set("email", email)
+         push('/dashboard')
+      }
+  })
+
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     setError("");
     console.log(data);

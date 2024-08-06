@@ -11,8 +11,8 @@ interface AIQuestions {
 }
 
 export default function Flashcard() {
-  const id = typeof window !== 'undefined' ? localStorage.getItem('id'):null;
-  const [res, setRes] = useState<AIQuestions | null>(null);
+  const id = typeof window !== 'undefined' ? localStorage.getItem('id') || '0' : '0';
+  const [res, setRes] = useState<AIQuestions | undefined>();
   const [count, setCount] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
   const [swipe, setSwipe] = useState<boolean>(false);
@@ -21,13 +21,11 @@ export default function Flashcard() {
     fetch(`/api/flashcard?id=${id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.clear()
-        console.log(data);
         setRes(data);
         setLoading(false);
       })
       .catch((error) => console.error('Fetch error:', error));
-  });
+  }, [id]);
 
   if (loading) {
     return (

@@ -17,7 +17,7 @@ const path = usePathname()
         <ul className='text-white hidden sm:flex gap-4 ' >
             <li className='hover:border hover:border-gray-700 hover:bg-gray-700 cursor-pointer font-bold p-2 rounded-full'><Link href={'/#1'}>Home</Link></li>
             <li className='hover:border hover:border-gray-700 hover:bg-gray-700 cursor-pointer font-bold p-2 rounded-full'><Link href={'/#2'}>Tools</Link></li>
-            <li className='hover:border hover:border-gray-700 hover:bg-gray-700 cursor-pointer font-bold p-2 rounded-full'><Link href={'/#3'}>Prezi</Link></li>
+            <li className='hover:border hover:border-gray-700 hover:bg-gray-700 cursor-pointer font-bold p-2 rounded-full'><Link href={'/#3'}>Prezzi</Link></li>
         </ul>
         <div className='text-white flex gap-5'>
             <button onClick={() => router.push('/sigin')}>Login</button>

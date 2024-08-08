@@ -52,10 +52,10 @@ export default function Plans() {
 <span className='text-white text-base'>Yearly</span>
 </h1>
 <ul className='text-white list-item'>
-    <li>* 202.80 CHF/€</li>
-    <li>* Sconto del 40%</li>
+    <li>* 239 CHF/€</li>
+    <li>* Sconto del 20%</li>
 </ul>
-<Link href={'/api/checkout?subscription=year&amount=203'} className='p-3 bg-[#151225] font-bold text-white' >Abbonati -{">"}</Link>
+<Link href={'/api/checkout?subscription=year&amount=239'} className='p-3 bg-[#151225] font-bold text-white' >Abbonati -{">"}</Link>
 </div>
    </div>
     </div>

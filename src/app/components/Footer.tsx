@@ -14,7 +14,7 @@ export default function Footer() {
   } else {
     return (
       <>
-        <div className="border-t-2 border-gray-800 flex flex-col lg:flex-row w-full items-center justify-between px-5 gap-4 bg-gradient-to-tr from-[#2D155E] to-black py-4">
+        <div className="border-t-2 border-gray-800 flex flex-col lg:flex-row w-full items-center justify-between  px-5 gap-4 bg-gradient-to-tr from-[#2D155E] to-black py-4">
           <div className="text-white">
             <Image
               src={logo}

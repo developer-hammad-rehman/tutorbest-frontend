@@ -16,7 +16,7 @@ export default function Sidebar() {
     </div>
     <HoverButton text='Dashboard ->'/>
     <div className='text-sm text-center font-bold font-serif text-gray-500'>
-    &#169; 2024 My Smartutor Inc.
+    &#169; 2024 Tutorbest.
     </div>
     </div>
   )

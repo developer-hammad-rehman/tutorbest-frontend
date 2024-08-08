@@ -705,7 +705,7 @@ export default function Sigin() {
                 Crea account
               </Link>{" "}
             </p>
-            <Link href={'https://tutorbest-frontend.vercel.app/api/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">
+            <Link href={'/api/api/google/login'} className="px-6 py-3 text-white flex gap-5 border-2 border-gray-600 hover:border-purple-700 transition-colors duration-1000 rounded-xl">
             <Chrome/> Login with google
             </Link>
           </form>

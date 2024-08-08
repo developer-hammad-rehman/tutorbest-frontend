@@ -4,7 +4,7 @@ const nextConfig = {
         return [
           {
             source: '/api/:path*',
-            destination: 'https://tutorbest-2jtkztuufq-uc.a.run.app/:path*'
+            destination: 'http://localhost:8000/:path*'
           }
         ]
       },

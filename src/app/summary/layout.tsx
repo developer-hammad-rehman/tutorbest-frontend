@@ -10,7 +10,7 @@ export default function layout(
     }
 ) {
   return (
-    <div className="grid grid-rows-12 grid-cols-12 w-full h-screen">
+    <div className="grid grid-rows-12 grid-cols-12 w-full h-screen overflow-hidden">
         <div className="row-span-3 col-span-12">
         <Navbar/>
         </div>

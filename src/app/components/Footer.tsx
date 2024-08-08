@@ -25,8 +25,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="bg-black text-gray-400 text-center text-xl lg:text-2xl py-2 px-4 flex justify-between items-center">
-          <span>Nextrend, LLC 1111B S Governors Ave #20753 Dover, DE 19904</span>
-          <span>001 (302) 310-4370</span>
+          <span>Nextrend, LLC</span>
         </div>
       </>
     );

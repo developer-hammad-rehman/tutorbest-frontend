@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpFromDot, LoaderCircle } from "lucide-react";
+import { ArrowBigRight, ArrowUpFromDot, LoaderCircle } from "lucide-react";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
@@ -60,7 +60,7 @@ export default function Chatbot() {
           {...register("message", { required: true })}
         />
         <button className="font-bold absolute z-50 right-3 p-3 rounded-full bg-black top-3  text-white" disabled={loading}>
-          {loading ?<LoaderCircle className="animate-spin" size={30}/> :<ArrowUpFromDot size={30} />}
+          {loading ?<LoaderCircle className="animate-spin" size={30}/> :<ArrowBigRight size={30}/>}
         </button>
       </form>
     </div>

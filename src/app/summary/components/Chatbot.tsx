@@ -44,7 +44,7 @@ interface Input {
   
     return (
       <div className='flex flex-col bg-gray-100 border rounded-lg h-full overflow-auto'>
-        <h1 className='text-3xl font-bold mx-auto py-4 italic border-b-2 border-gray-500 tracking-widest'>Chat Bot</h1>
+        <h1 className='text-3xl font-bold mx-auto py-4 italic border-b-2 border-gray-500 tracking-widest'>Your Tutor</h1>
         <div className='flex flex-col gap-4 px-4 py-3 overflow-y-auto'>
           {res.map((val, index) => (
             <React.Fragment key={index}>

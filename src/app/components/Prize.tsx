@@ -8,7 +8,7 @@ export default function Prize() {
     <h1 className='text-center text-3xl font-bold text-gray-50'>
         Prezzi
         </h1>
-        <p className='text-white text-center'>TutorBest è stato creato per facilitare il tuo percorso scolastico</p>
+        <p className='text-white text-center py-8'>TutorBest è stato creato per facilitare il tuo percorso scolastico</p>
    </div>
    <div className='flex flex-col sm:flex-row gap-10'>
    <div className='flex flex-col gap-10 border-2  bg-gradient-to-t from-[#301E57] to-[#0E0628] border-gray-800 px-8 py-5'>

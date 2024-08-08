@@ -48,7 +48,7 @@ export default function Plans() {
   </div>
 <div className='flex flex-col gap-10 '>
 <h1 className="bg-gradient-to-r from-purple-600  to-pink-400 text-transparent bg-clip-text text-3xl">
-202.80 CHF/€
+239 CHF/€
 <span className='text-white text-base'>Yearly</span>
 </h1>
 <ul className='text-white list-item'>

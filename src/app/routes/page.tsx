@@ -12,6 +12,7 @@ export default function Route() {
            <Link href={`/summary/question?id=${id}`} className='bg-gray-200 p-4 text-xl text-center font-bold'>Test</Link>
            <Link href={`/summary/flashcard?id=${id}`} className='bg-gray-200 p-4 text-xl text-center font-bold'>Flashcard</Link>
            <Link href={`/dashboard`} className='bg-gray-200 p-4 text-xl text-center font-bold'>Dashboard</Link>
+           <Link href={`/chatbot`} className='bg-gray-200 p-4 text-xl text-center font-bold'>Chatbot</Link>
        </div>
      )
     

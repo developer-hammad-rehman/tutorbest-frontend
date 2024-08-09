@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import pic1 from "../../../public/1.png";
+import pic1 from "../../../public/4.jpeg";
 import pic2 from "../../../public/2.png";
 import pic3 from "../../../public/3.png";
 import { useRouter } from "next/navigation";
@@ -96,12 +96,13 @@ export default function Card() {
           <p className="text-white text-xs sm:text-base font-bold">
             Trasforma istantaneamente appunti, PDF:
             <br />
-            - Riassunti
+            1 - Riassunti
             <br />
-            - Flashcards
+            2 - Flashcards
             <br />
-            - Mappe mentali
-            <br />- Quiz Inoltre accedi a Chat AI personalizzata - Tabelle di
+            3 - Mappe mentali
+            <br />
+            4 - Quiz Inoltre accedi a Chat AI personalizzata - Tabelle di
             organizzazione di studio - Trasformazione testi in Bionic Reading
           </p>
           <button
@@ -111,7 +112,7 @@ export default function Card() {
             Inizia -{">"}
           </button>
         </div>
-        <Image src={pic1} alt="pic1" className="w-96 hidden lg:flex" />
+        <Image src={pic1} alt="pic1" className="w-96 h-96 hidden lg:flex" />
       </div>
       <div className="flex flex-col sm:flex-row gap-20">
         <div className="py-4 px-7  flex flex-col items-center border-4 rounded-xl border-gray-800  gap-3 bg-gradient-to-t from-[#301E57] to-[#0E0628] w-64 md:w-96">
@@ -136,8 +137,7 @@ export default function Card() {
                 Flashcard
               </h1>
               <p className="text-white text-xs sm:text-base font-bold">
-                Dì addio alle infinite ricerche di domande e risposte. Inizia
-                subito con il Quiz personalizzato
+              Velocizza il processo di apprendimento con le Flashcards personalizzate.
               </p>
             </div>
           </div>

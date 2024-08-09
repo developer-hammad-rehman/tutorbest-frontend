@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image"
-import pic1 from "../../../public/1.png"
+import pic1 from "../../../public/4.jpeg"
 import pic2 from "../../../public/2.png"
 
 
@@ -14,7 +14,7 @@ export default function AboveFooter() {
           Connettiti con il tuo Tutor Al personale e ricevi risposte 24/7
           </p>
           </div>
-<Image src={pic1} alt='pic1' className='w-96 '/>
+<Image src={pic1} alt='pic1' className='w-72 h-72'/>
         </div>
         {/* <div className='py-4 px-7 sm:py-10 lg:flex items-center border-4 rounded-xl border-gray-800 sm:px-10 gap-3 bg-gradient-to-t from-[#301E57] to-[#0E0628] w-64 sm:w-auto'>
 <Image src={pic2} alt='pic1' className='w-96 '/>
